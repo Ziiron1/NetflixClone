@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Tmdb from './Tmdb'
 import MovieRow from './components/MovieRow/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie/FeaturedMovie';
+import { Header } from './components/Header/Header';
+
 
 /* Style */
 import './App.css'
@@ -34,6 +36,8 @@ function App() {
 
   return (
     <div className='page'>
+
+      <Header />
 
       {featuredData &&
         <FeaturedMovie item={featuredData} />
