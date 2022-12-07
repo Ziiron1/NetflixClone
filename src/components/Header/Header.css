@@ -11,17 +11,22 @@ header {
     padding: 0 33px;
     background: transparent;
     transition: all ease 0.5s;
-    background: rgba(20, 20, 20);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.701) 10%, transparent);
 }
 
 header.black {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.701) 10%, transparent);
+    background: rgba(20, 20, 20);
 }
 
 .Kids {
     color: #ffffff;
     font-size: 14px;
     font-weight: 500;
+}
+
+.Kid {
+    list-style: none;
+    text-decoration: none;
 }
 
 .Active {

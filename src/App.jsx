@@ -3,6 +3,7 @@ import Tmdb from './Tmdb'
 import MovieRow from './components/MovieRow/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie/FeaturedMovie';
 import { Header } from './components/Header/Header';
+import Load from './assets/Load.svg'
 
 
 /* Style */
@@ -14,6 +15,7 @@ function App() {
 
   const [movielist, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -34,10 +36,26 @@ function App() {
     loadAll();
   }, [])
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 80) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+  }, [])
+
   return (
     <div className='page'>
 
-      <Header />
+      <Header black={blackHeader} />
 
       {featuredData &&
         <FeaturedMovie item={featuredData} />
@@ -48,6 +66,22 @@ function App() {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+      <footer className="footer">
+        <h4>Como referencia do Projeto feito em B7Web</h4>
+        <br />
+        Todos os direitos de imagens da Netflix
+        <br />
+        Dados da Api de Themoviedb
+        <br />
+        Desenvolvido por <a href="https://github.com/Ziiron1">Ziiron</a>
+      </footer>
+
+      {movielist.length <= 0 &&
+        <div className="loading">
+          <img src={Load} width="1000px" alt="Loading Movies" />
+        </div>
+      }
+
     </div>
   )
 }

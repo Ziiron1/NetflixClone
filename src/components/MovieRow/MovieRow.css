@@ -19,6 +19,7 @@
     display: inline-block;
     width: 170px;
     cursor: pointer;
+    box-shadow: rgba(65, 67, 69, 0.2) 0px 8px;
 }
 
 .movieRow--item img {

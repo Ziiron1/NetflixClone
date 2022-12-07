@@ -23,7 +23,6 @@ export default ({ item }) => {
     const str = `${item.vote_average}`
     const strNum = str.replace(/[^0-9]/g, '')
     let Classificação = (strNum.substr(0, 2));
-    console.log(strNum)
 
     return (
         <section className="featured" style={{

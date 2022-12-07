@@ -15,3 +15,31 @@ body {
 .lists {
     margin-top: -125px;
 }
+
+.footer {
+    display: block;
+
+    text-align: center;
+    color: #E5E5E5;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffdfdf;
+    border-bottom: 1px solid rgb(207, 146, 146);
+}
+
+.loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    width: 300px;
+    margin-left: 500px;
+    background-color: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

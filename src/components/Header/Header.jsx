@@ -4,26 +4,28 @@ import './Header.css'
 import Lupa from './assets/Lupa.svg'
 import Sino from './assets/Sino.png'
 
-export const Header = () => {
+export const Header = ({ black }) => {
     return (
-        <header className='black'>
+        <header className={black ? 'black' : ''}>
             <div className='header--logo'>
-                <img src={Logo} width="95px" alt="Netflix" />
+                <a href="/">
+                    <img src={Logo} width="95px" alt="Netflix" />
+                </a>
             </div>
             <div className="header--menu-container">
                 <ul className="header--menu">
                     <li><a href="/" className="header--menu-item"><span className='Active'>Início</span></a></li>
-                    <li><a href="/" className="header--menu-item">Séries</a></li>
-                    <li><a href="/" className="header--menu-item">Filmes</a></li>
-                    <li><a href="/" className="header--menu-item">Bombando</a></li>
-                    <li><a href="/" className="header--menu-item">Minha Lista</a></li>
-                    <li><a href="/" className="header--menu-item">Navegar por idiomas</a></li>
+                    <li><a href="https://www.netflix.com/browse/genre/83" className="header--menu-item">Séries</a></li>
+                    <li><a href="https://www.netflix.com/browse/genre/34399" className="header--menu-item">Filmes</a></li>
+                    <li><a href="https://www.netflix.com/latest" className="header--menu-item">Bombando</a></li>
+                    <li><a href="https://www.netflix.com/browse/my-list" className="header--menu-item">Minha Lista</a></li>
+                    <li><a href="https://www.netflix.com/browse/original-audio" className="header--menu-item">Navegar por idiomas</a></li>
                 </ul>
             </div>
             <div className="header--icons-container">
                 <ul className="header--icons">
                     <img src={Lupa} style={{ paddingRight: "16px" }} alt="" />
-                    <span className="Kids">Infantil</span>
+                    <a href="https://www.netflix.com/Kids" className='Kid'><span className="Kids">Infantil</span></a>
                     <img src={Sino} style={{ marginLeft: "16px" }} width="26px" alt="" />
                 </ul>
             </div>
