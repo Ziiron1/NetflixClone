@@ -13,11 +13,12 @@
 
 .movieRow--list {
     width: 10000px;
+    transition: all ease .5s;
 }
 
 .movieRow--item {
     display: inline-block;
-    width: 170px;
+    width: 178px;
     cursor: pointer;
     box-shadow: rgba(65, 67, 69, 0.2) 0px 8px;
 }
@@ -30,4 +31,34 @@
 
 .movieRow--item img:hover {
     transform: scale(1);
+}
+
+.movieRow--left,
+.movieRow--right {
+    margin-top: 12px;
+    position: absolute;
+    width: 40px;
+    height: 230px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease .25s;
+}
+
+.movieRow--left {
+    left: 0;
+}
+
+.movieRow--right {
+    right: 0;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;
 }
