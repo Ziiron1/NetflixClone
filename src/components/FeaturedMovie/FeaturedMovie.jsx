@@ -48,12 +48,10 @@ export default ({ item }) => {
             <a href={item.homepage} className="featured--watchbutton">
               ▶ Assistir
             </a>
-
             <a
               href={`/info/${media_type}/${item.id}`}
-              className="featured--moreinfobutton"
-            >
-              <img src={Svg} width="18px" alt="" style={{ color: "white" }} />{" "}
+              className="featured--moreinfobutton">
+              <img src={Svg} width="18px" alt="Info Icon" />{" "}
               Mais informações
             </a>
           </div>

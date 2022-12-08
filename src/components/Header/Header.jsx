@@ -9,7 +9,7 @@ export const Header = ({ black }) => {
         <header className={black ? 'black' : ''}>
             <div className='header--logo'>
                 <a href="/">
-                    <img src={Logo} width="95px" alt="Netflix" />
+                    <img src={Logo} width="92px" alt="Netflix" />
                 </a>
             </div>
             <div className="header--menu-container">
@@ -18,7 +18,7 @@ export const Header = ({ black }) => {
                     <li><a href="https://www.netflix.com/browse/genre/83" className="header--menu-item">Séries</a></li>
                     <li><a href="https://www.netflix.com/browse/genre/34399" className="header--menu-item">Filmes</a></li>
                     <li><a href="https://www.netflix.com/latest" className="header--menu-item">Bombando</a></li>
-                    <li><a href="https://www.netflix.com/browse/my-list" className="header--menu-item">Minha Lista</a></li>
+                    <li><a href="https://www.netflix.com/browse/my-list" className="header--menu-item">Minha lista</a></li>
                     <li><a href="https://www.netflix.com/browse/original-audio" className="header--menu-item">Navegar por idiomas</a></li>
                 </ul>
             </div>

@@ -1,28 +1,36 @@
-// import React from 'react'
-// import { getMovieInfo } from '../../Tmdb'
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import Tmdb from '../../Tmdb'
+import { useParams } from 'react-router-dom';
+import './MovieSeries.css'
 
-// const MovieSeries = () => {
+const MovieSeries = (item) => {
 
-//     const { type, id } = useParams();
-//     const [background, setBackground] = useState("");
-//     const [info, setInfo] = useState({});
+    const { type, id } = useParams();
+    const [info, setInfo] = useState([]);
 
-//     useEffect(() => {
-//         const getInfo = async () => {
-//             let data = await getMovieInfo(id, type)
-//             setBackground(data.backdrop_path)
-//             setInfo(data)
-//         }
-//         getInfo()
-//     }, [id, type])
+    let media_type = item.first_air_date ? "tv" : "movie";
 
-//     return (
-//         <div>
-//             aaaa
-//         </div>
-//     )
-// };
+    useEffect(() => {
+        const getInfo = async () => {
 
-// export default MovieSeries;
+            /* Pegando lista */
+            let data = await Tmdb.getHomeList(id, type);
+            setInfo(data);
+            console.log(data);
+        };
+        getInfo();
+    }, []);
+
+
+    return (
+        <div>
+            <div>
+                OI GENTE TESTANDO
+            </div>
+            <p>{info.title}</p>
+            <img src={info.poster_path} alt="A" />
+        </div>
+    )
+}
+
+export default MovieSeries

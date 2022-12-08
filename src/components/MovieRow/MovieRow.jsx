@@ -34,17 +34,18 @@ export default ({ title, items }) => {
         <NavigateNextIcon style={{ fontSize: 50 }} />
       </div>
       <div className="movieRow--listarea">
-        <div className="movieRow--list" style={{ marginLeft: scrollX }}>
-          {items.results.length > 0 &&
-            items.results.map((item, key) => (
-              <div key={key} className="movieRow--item">
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                  style={{ borderRadius: "6px" }}
-                  alt={item.original_name}
-                />
-              </div>
-            ))}
+
+        <div className="movieRow--list" style={{
+          marginLeft: scrollX
+        }}>
+          {
+            items.results.length > 0 && items.results.map((item, key) => {
+              let media_type = item.first_air_date ? "tv" : 'movie'
+              return <a href={`/info/${media_type}/${item.id}`} key={key} className="movieRow--item">
+                <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
+              </a>
+            })
+          }
         </div>
       </div>
     </div>

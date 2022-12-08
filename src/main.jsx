@@ -5,7 +5,7 @@ import './index.css'
 
 /* Rotas */
 import App from './App'
-// import MovieSeries from './components/screens/MovieSeries'
+import MovieSeries from './components/screens/MovieSeries'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" exact element={<App />} />
         {/* <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/info/:type/:id" element={<MovieSeries />} /> */}
+        <Route path="/info/:type/:id" element={<MovieSeries />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
