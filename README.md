@@ -3,7 +3,7 @@
 
 O projeto foi feito a partir de uma live B7web no youtube, intuito de fazer uma página clone do Netflix, usando React, js, Css
 
- ![Página principal do projeto](https://imgur.com/PwnWdA3)
+ ![Página principal do projeto](https://i.imgur.com/PwnWdA3.png)
  
 ### 	:film_strip:Projeto em Hospedagem
 
